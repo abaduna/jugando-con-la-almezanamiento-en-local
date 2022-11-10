@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sotr';
+  sesection = {id:"",name:""}
+  guardardata(){
+    let data = {id:1 ,name:"xyx"}
+
+    localStorage.setItem("session",JSON.stringify(data))
+  }
+  loadData(){
+    let data:any = localStorage.getItem("session")
+    alert(data)
+    this.sesection = JSON.parse(data)
+  }
 }
